@@ -1,2 +1,2 @@
 # post-arch-installer
-Simple user manager + plasma clean installation + plasma customization
+Simple plasma clean installation
