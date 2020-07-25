@@ -65,9 +65,10 @@ int main() {
   system("pacman -Syyu < res.txt");
   std::string packages = "plasma konsole dolphin okular spectacle git";
   system(("pacman -S " + packages + " < res.txt").c_str());
+  system("systemctl enable sddm");
 
   // Reboot
-  std::cout << "Now you can reboot your system by typing 'reboot'" << def << std::endl;
+  std::cout << std::endl << cyan << "Now you can reboot your system by typing 'reboot'" << def << std::endl;
 
   return 0;
 }
