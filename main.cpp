@@ -62,6 +62,7 @@ int main() {
   res << "\n\n\nY";
   res.close();
 
+  system("locale-gen");
   system("pacman -Syyu < res.txt");
   std::string packages = "plasma konsole dolphin okular spectacle git";
   system(("pacman -S " + packages + " < res.txt").c_str());
