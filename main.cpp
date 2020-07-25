@@ -34,7 +34,7 @@ int main() {
   system(("passwd " + username).c_str());
 
   // Sudo
-  std::cout << cyan << "Adding the new user to sudoers" << std::endl;
+  std::cout << std::endl << cyan << "Adding the new user to sudoers" << def << std::endl;
 
   std::ifstream sudoers;
   sudoers.open("/etc/sudoers");
@@ -50,6 +50,8 @@ int main() {
   new_sudoers.close();
 
   // Minimal plasma installation
+  std::cout << std::endl
+            << cyan << "Minimal Plasma installation" << def << std::endl;
   system("systemctl enable dhcpcd");
   system("systemctl enable NetworkManager");
   system("systemctl start dhcpcd");
@@ -57,7 +59,7 @@ int main() {
 
   std::ofstream res;
   res.open("res.txt");
-  res << "Y";
+  res << "\n\n\nY";
   res.close();
 
   system("pacman -Syyu < res.txt");
@@ -65,7 +67,7 @@ int main() {
   system(("pacman -S " + packages + " < res.txt").c_str());
 
   // Reboot
-  std::cout << "Now you can reboot your system by typing 'reboot'";
+  std::cout << "Now you can reboot your system by typing 'reboot'" << def << std::endl;
 
   return 0;
 }
