@@ -42,7 +42,7 @@ int main() {
   sudoers.close();
 
   int pos = temp_sudoers.find("root ALL=(ALL) ALL", 0);
-  temp_sudoers.insert(pos + 19, (username + "ALL=(ALL) ALL\n").c_str());
+  temp_sudoers.insert(pos + 19, (username + " ALL=(ALL) ALL\n").c_str());
 
   std::ofstream new_sudoers;
   new_sudoers.open("/etc/sudoers");
