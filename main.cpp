@@ -29,7 +29,6 @@ int main() {
   std::cout << def << "Username (default 'user'): ";
   std::string username = "user";
   username = parse_input(username);
-  std::cout << username.length();
   system(("useradd -m " + username).c_str());
   system(("passwd " + username).c_str());
 
